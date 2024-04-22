@@ -1,0 +1,86 @@
+{
+  "name": "gateway",
+  "version": "0.12.3",
+  "homepage": "./",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0 <19.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.1",
+    "bootstrap-icons": "^1.9.0",
+    "bos-workspace": "^1.0.0-alpha",
+    "dompurify": "^3.0.6",
+    "dotenv-webpack": "^8.1.0",
+    "error-polyfill": "^0.1.2",
+    "near-api-js": "^2.1.3",
+    "near-social-vm": "github:urbit/NearSocialVM#vm-out",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
+    "react-bootstrap-typeahead": "^6.3.2",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.2.0",
+    "sass": "^1.72.0",
+    "sass-loader": "^14.1.1",
+    "webpack": "^5.91.0"
+  },
+  "scripts": {
+    "serve": "webpack serve",
+    "webpack": "webpack",
+    "dev": "concurrently \"npm run dev:apps\" \"npm run dev:gateway\"",
+    "prod": "npm run webpack -- --env mode=production",
+    "prod:analyze": "npm run prod -- --env presets=analyze",
+    "build": "npm run prod",
+    "start": "npm run dev",
+    "dev:apps": "bos-workspace dev",
+    "dev:gateway": "npm run serve -- --env mode=development"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "babel-loader": "^8.2.2",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^5.3.2",
+    "https-browserify": "^1.0.0",
+    "mini-css-extract-plugin": "^2.2.2",
+    "path-browserify": "^1.0.1",
+    "postcss-loader": "^7.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "style-loader": "^3.2.1",
+    "url": "^0.11.0",
+    "webpack": "^5.91.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.0",
+    "webpack-manifest-plugin": "^5.0.0",
+    "webpack-merge": "^5.8.0"
+  }
+}
